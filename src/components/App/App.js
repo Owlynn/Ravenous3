@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import Searchbar from '../SearchBar/SearchBar'
 import './App.css';
+import BusinessList from '../BusinessList/BusinessList'
 
 class App extends React.Component{
   constructor(props){
@@ -9,7 +10,13 @@ class App extends React.Component{
   }
 
   render(){
-    return <h1> Hello</h1>
+    return (
+      <div>
+        <h1> Ravenous </h1>
+        <Searchbar />
+        <BusinessList/>
+      </div>
+    );
   }
 }
 

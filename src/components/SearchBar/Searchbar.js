@@ -1,8 +1,9 @@
 import React from "react";
+import { render } from "react-dom";
 import { ReactDOM } from "react-dom";
 import './SearchBar.css'
 
-class Searchbar extends React.Component{
+class Searchbar extends React.Component {
     constructor(props){
         super(props)
 
@@ -24,10 +25,27 @@ class Searchbar extends React.Component{
         if (this.sortBy === selectedOption){
             return 'active';
         }  
-        
         return '';
     };
 
+    renderSortByOption (){
+        return (
+            Object.keys(this.sortByOptions)
+            .map ( 
+                option => {
+                    let optionValue = this.sortByOptions[option];
+                    return (
+                        <li
+                            key = {optionValue}
+                            className = {this.getsortByClass(optionValue)}
+                            >
+                                {option}
+                        </li>
+                    )
+                }
+            )
+        )
+}
 
     render(){
         return (
@@ -35,9 +53,7 @@ class Searchbar extends React.Component{
             <div className="SearchBar">
             <div className="SearchBar-sort-options">
               <ul>
-                <li>Best Match</li>
-                <li>Most Reviewed</li>
-                <li>critère 3</li>
+                {this.renderSortByOption()}
               </ul>
             </div>
             <div className="SearchBar-fields">

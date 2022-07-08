@@ -9,8 +9,8 @@ class Searchbar extends React.Component{
 
     render(){
         return (
-            (
-                 <div className="SearchBar">
+
+            <div className="SearchBar">
             <div className="SearchBar-sort-options">
               <ul>
                 <li>critère 1</li>
@@ -25,14 +25,14 @@ class Searchbar extends React.Component{
 
               <input 
                 placeholder="Where?" 
+                onChange = {this.handleLocationChange} 
               />
 
             </div>
-                <div className="SearchBar-submit">
+            <div className="SearchBar-submit">
+              <a>Let's Go</a>
             </div>
           </div> 
-            )
-
         )
     }
 }

@@ -8,13 +8,24 @@ class Business extends React.Component{
 
     render(){
         return (
-            <div>
-                <li>Nom</li>
-                <li>adresse</li>
-                <li>etc</li>
-                <li>etc</li>
-                <li>etc</li>
+            <div className="Business">
+            <div className="image-container">
+            <img src='././logo.svg' alt=''/>
             </div>
+            <h2>Name</h2>
+            <div className="Business-information">
+            <div className="Business-address">
+                <p>adresse</p>
+                <p>Ville</p>
+                <p>Code postak</p>
+            </div>
+            <div className="Business-reviews">
+                <h3>Catégorie</h3>
+                <h3 className="rating">stars</h3>
+                <p>nb de reviews</p>
+            </div>
+            </div>
+        </div>
         )
     }
 }

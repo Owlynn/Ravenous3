@@ -5,7 +5,29 @@ import './SearchBar.css'
 class Searchbar extends React.Component{
     constructor(props){
         super(props)
+
+        this.state = {
+            location : "",
+            term : "",
+            sortBy :"best_match"
+        }
+
+        this.sortByOptions ={
+            'Best Match': 'best_match',
+            'Highest Rated': 'rating',
+            'Most Reviewed': 'review_count'
+        };
     }
+
+   
+    getsortByClass(selectedOption){
+        if (this.sortBy === selectedOption){
+            return 'active';
+        }  
+        
+        return '';
+    };
+
 
     render(){
         return (
@@ -13,8 +35,8 @@ class Searchbar extends React.Component{
             <div className="SearchBar">
             <div className="SearchBar-sort-options">
               <ul>
-                <li>critère 1</li>
-                <li>critère 2</li>
+                <li>Best Match</li>
+                <li>Most Reviewed</li>
                 <li>critère 3</li>
               </ul>
             </div>
@@ -25,12 +47,11 @@ class Searchbar extends React.Component{
 
               <input 
                 placeholder="Where?" 
-                onChange = {this.handleLocationChange} 
               />
 
             </div>
             <div className="SearchBar-submit">
-              <a>Let's Go</a>
+                  <a>Let's Go</a>
             </div>
           </div> 
         )
